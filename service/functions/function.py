@@ -1,7 +1,14 @@
+from service.api.api import ApiClient
+
+
 class BaseFunction:
     name: str
     description: str
     parameters: dict
+    api: ApiClient
+
+    def __init__(self, api: ApiClient):
+        self.api = api
 
     def run(self, arguments: dict):
         """

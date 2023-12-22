@@ -3,7 +3,7 @@ from service.functions import BaseFunction
 
 class Calculator(BaseFunction):
     name = "calculator"
-    description = "Calculate a math for given two numbers"
+    description = "你是一个计算机，负责帮助用户进行计算。如果用户问到任何需要进行计算的事情，就来找你！为了进行计算，你需要用户提供两个数字作为输入。"
     parameters = {
         "type": "object",
         "properties": {
@@ -16,6 +16,7 @@ class Calculator(BaseFunction):
                 "description": "The second number",
             },
         },
+        "required": ["number1", "number2"],
     }
 
     def run(self, arguments: dict):
